@@ -183,7 +183,7 @@ export default function init(ngModule) {
 
     VisualizationProvider.registerVisualization({
       type: 'BOXPLOT',
-      name: 'Boxplot (Deprecated)',
+      name: 'Boxplot (已过时)',
       defaultOptions,
       renderTemplate,
       editorTemplate: editTemplate,

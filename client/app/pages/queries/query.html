@@ -196,7 +196,7 @@
                   </button>
                 </div>
                 <div class="alert alert-info m-t-15" ng-show="queryResult.getStatus() == 'waiting'">
-                  Query in queue&hellip;
+                  正在查询&hellip;
                   <rd-timer timestamp="queryResult.getUpdatedAt()"></rd-timer>
                   <button type="button" class="btn btn-warning btn-xs pull-right" ng-disabled="cancelling"
                     ng-click="cancelExecution()">取消
