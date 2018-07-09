@@ -1,0 +1,33 @@
+<div class="empty-state bg-white tiled" ng-if="!$ctrl.loading && $ctrl.shouldShowOnboarding()">
+    <div class="empty-state__summary">
+        <h4 ng-if="$ctrl.title">{{$ctrl.title}}</h4>
+        <h2 ng-if="$ctrl.icon">
+            <i ng-class="$ctrl.icon" aria-hidden="true"></i>
+        </h2>
+        <p>{{$ctrl.description}}</p>
+    </div>
+    <div class="empty-state__steps">
+        <h4>开始吧</h4>
+        <ol>
+            <li ng-class="{done: $ctrl.dataSourceStepCompleted}">
+                <span ng-if="!$ctrl.isAdmin">请求帐户管理员连接数据源。</span>
+                <span ng-if="$ctrl.isAdmin">
+                    <a href="data_sources">连接</a> 数据源
+                </span>
+            </li>
+            <li ng-class="{done: $ctrl.queryStepCompleted}">
+                <a href="queries/new">创建</a> 您的第一个查询</li>
+            <li ng-if="$ctrl.showAlertStep" ng-class="{done: $ctrl.alertStepCompleted}">
+                <a href="alerts/new">创建</a> 您的第一个警报</li>
+            <li ng-if="$ctrl.showDashboardStep" ng-class="{done: $ctrl.dashboardStepCompleted}">
+                <a ng-click="$ctrl.newDashboard()">创建</a> 您的第一个仪表盘</li>
+            <li ng-if="$ctrl.showInviteStep" ng-class="{done: $ctrl.inviteStepCompleted}">
+                <a href="users/new">邀请</a> 您的团队成员</li>
+        </ol>
+        <p>需要更多支持?
+            <a href="{{$ctrl.helpLink}}" target="_blank">查阅帮助
+                <i class="fa fa-external-link" aria-hidden="true"></i>
+            </a>
+        </p>
+    </div>
+</div>
